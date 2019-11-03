@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url('doc.jpg') no-repeat;
+    background-size: cover;
+}
+
+.m{
+    margin: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #fff;
+    border-bottom: 1px solid black;
+    box-shadow: 1px 1px 1px blue;
+}
+.navbar a{
+    text-decoration: none;
+    display: block;
+    color: blue;
+    border: 2px solid rgb(54, 226, 54) ;
+    transform: 0.2s;
+    border-radius: 200px;
+    padding: 7px;
+    outline: none;
+}
+.navbar ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.navbar ul li{
+    float: left;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 38px;
+    align-content: center;
+    align-items: center;
+}
+.navbar a :hover{
+    background-color: #ddd;
+    color: #000;
+}
+.heading{
+    text-align: center;
+}
+h1{
+    padding: 5vh 0 0 0;
+}
+.heading .medi{
+    color: blue;
+}
+.navbar .nav2{
+    text-decoration: none;
+    top:0;
+    left:0;
+    color: blue;
+    font-size: 30px;
+}
+.navbar .nav1{
+float:right;
+}
+.user{
+    text-align: center;
+    width: 300px;
+    position: absolute;
+    background: gray;
+    opacity: 0.8;
+    padding: 40px;
+    top: 37%;
+    left: 36%;
+    transform: translate(-50% -50%);
+
+}
+.user input[type="text"]{
+    display: block;
+    outline: none;
+    margin: 20px auto;
+    text-align: center;
+    border-bottom: 1px solid black;
+    transform: 0.2s;
+    padding: 6px;
+}
+.user input[type="password"]{
+    display: block;
+    outline: none;
+    margin: 20px auto;
+    text-align: center;
+    border-bottom: 1px solid black;
+    transform: 0.2s;
+    padding: 6px;
+}
+.user input[type="submit"]{
+background-color: #ff1493;
+border: 0px solid ;
+display: block;
+outline: none;
+text-align: center;
+margin: 20px auto;
+transform: 0.2s;
+border-radius: 200px;
+padding: 5px 15px 5px 15px;
+color: #fff;
+font-weight: 700px;
+}
