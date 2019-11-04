@@ -32,16 +32,16 @@ public class PatSignUp extends HttpServlet {
 		
 		try {
 		Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/MyDoc","testuser","testuser123");
-		Statement s=c.createStatement();
-		ResultSet unames=s.executeQuery("select pname from Patients");
-		while(unames.next()) {
-			if(unames.getString(1).equals(uname)) {
-				response.sendRedirect("DoctorSignUp.jsp");
-				exist=true;
-				break;
-			}
-			unames.next();
-		}
+//		Statement s=c.createStatement();
+//		ResultSet unames=s.executeQuery("select pname from Patients");
+//		while(unames.next()) {
+//			if(unames.getString(1).equals(uname)) {
+//				response.sendRedirect("DoctorSignUp.jsp");
+//				exist=true;
+//				break;
+//			}
+//			unames.next();
+//		}
 		if(!exist) {
 		PreparedStatement ps=c.prepareStatement("insert into Patients(pname,email,phone,password) values(?,?,?,?)");
 		ps.setString(1,uname);
@@ -51,7 +51,7 @@ public class PatSignUp extends HttpServlet {
 		ps.executeUpdate();
 		}
 		c.close();
-		response.sendRedirect("appointment.jsp");
+		response.sendRedirect("bookAppointment.jsp");
 		}catch(Exception e) {
 			System.out.print(e);
 		}

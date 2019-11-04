@@ -21,10 +21,10 @@
 <H1 class="medi">MyDoc</H1>
 <h2>Online Doctor Appointment</h2>
 </div>
-<form  class="user" action="login" method="post">
+<form  class="user" action="PatSignIn" method="post">
     <h2>Welcome User</h2>
-    <input type="text" name="name" placeholder="Username">
-   <input type="password" name="password" placeholder="Password">
+    <input type="text" name="pname" placeholder="Username">
+   <input type="password" name="pass" placeholder="Password">
    <input type="submit" value="login">
     <h5>New User?</h5>
     <a href="userregister.jsp">Register Here</a>

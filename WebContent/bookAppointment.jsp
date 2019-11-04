@@ -12,11 +12,11 @@
 </head>
 <body>
 		<form action="bookAppointment.jsp" >
-		<input  placeholder="Enter Doctor Name" name="doctor" >   <input type="submit" value="search" ><br>
-		<select name="city">
-			<option>man</option>
+		<!--  <input  placeholder="Enter Doctor Name" name="doctor" >   <input type="submit" value="search" ><br>-->
+		Select City <select name="city">
+			<option>mangalore</option>
 		</select><br>
-		<select name="category">
+		Select Category<select name="category">
 			<option>ed</option>
 		</select><br>
 		<input type="submit" >
@@ -27,7 +27,7 @@
 		String category = request.getParameter("category") ;
 		try{
 			Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/MyDoc","testuser","testuser123");
-			PreparedStatement ps=c.prepareStatement("select dname,payment from Doctors where city=? and category=?");
+			PreparedStatement ps=c.prepareStatement("select dname,payment,time,phone from Doctors where city=? and category=?");
 			ps.setString(1, city);
 			ps.setString(2, category);
 			doctorsList=ps.executeQuery();
@@ -36,14 +36,14 @@
 		}
 		while(doctorsList.next()){
 			%>
-			<form action="demo" >
 			<h2><%=doctorsList.getString("dname") %></h2>
-			<h2><%=doctorsList.getInt("payment") %></h2>
-			<input name="<%=doctorsList.getString("dname") %>" type="submit" value="book" >
+			<h4>payment fee : <%=doctorsList.getInt("payment") %></h4>
+			<h4>Timings : <%=doctorsList.getString("time") %></h4>
+			<h4>Ph.no : <%=doctorsList.getInt("phone") %></h4>
+			<a  href="bookAppointment?doctor=<%=doctorsList.getString("dname")%>"><button>click</button></a>
 			<hr>
-			</form>
 		<%}%>
 		
-		
+	
 </body>
 </html>

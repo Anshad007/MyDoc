@@ -20,7 +20,7 @@
             <input type="text" name="category" placeholder="category">
             <input type="text" name="city" placeholder="City">
             <input type="email" name="email" placeholder="Email">
-            <input type="tel" name="phno" placeholder="Phone Number" >
+              <input type="tel" name="phno" placeholder="Phone Number" >  
             <input type="text" name="time" placeholder="working time">
             <input type="text" name="payment" placeholder="Average Working Fee">
             <input type="password" name="pass" placeholder="Password">

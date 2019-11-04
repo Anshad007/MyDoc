@@ -20,10 +20,10 @@
 <H1 class="medi">MyDoc</H1>
 <h2>Online Doctor Appointment</h2>
 </div>
-<form  class="user" action="login" method="post">
+<form  class="user" action="DocSignIn" method="post">
     <h2>Welcome Doctor</h2>
-    <input type="text" name="name" placeholder="Username">
-   <input type="password" name="password" placeholder="Password">
+    <input type="text" name="dname" placeholder="Username">
+   <input type="password" name="pass" placeholder="Password">
    <input type="submit" value="login">
    <h5>New User?</h5>
     <a href="docreg.jsp">Register Here</a>

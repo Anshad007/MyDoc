@@ -28,7 +28,7 @@ public class DocSignUp extends HttpServlet {
 		String time = request.getParameter("time");
 		try {
 			Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/MyDoc","testuser","testuser123");
-			PreparedStatement ps=c.prepareStatement("insert into Doctors(dname,email,phone,password,city,category,payment,time) values(?,?,?,?,?,?)");
+			PreparedStatement ps=c.prepareStatement("insert into Doctors(dname,email,phone,password,city,category,payment,time) values(?,?,?,?,?,?,?,?)");
 			ps.setString(1,dname);
 			ps.setString(2,email);
 			ps.setInt(3,phone);
@@ -38,7 +38,7 @@ public class DocSignUp extends HttpServlet {
 			ps.setInt(7, payment);
 			ps.setString(8, time);
 			ps.executeUpdate();
-			response.sendRedirect("");
+			response.sendRedirect("AppointedList.jsp");
 		}catch(Exception e) {
 			System.out.println(e);
 		}
