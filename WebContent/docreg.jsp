@@ -16,7 +16,7 @@
     <form class="userreg" action="DocSignUp" method="post">
         <h1>MyDoc</h1>
         <h2>Register Here</h2>
-            <input type="text" name="dname" placeholder="Full name">
+            <input type="text" name="dname" placeholder="Username">
             <input type="text" name="category" placeholder="category">
             <input type="text" name="city" placeholder="City">
             <input type="email" name="email" placeholder="Email">

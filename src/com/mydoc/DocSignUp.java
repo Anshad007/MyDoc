@@ -18,6 +18,7 @@ public class DocSignUp extends HttpServlet {
        
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.print("sdfs");
 		String dname=request.getParameter("dname");
 		String category=request.getParameter("category");
 		String city=request.getParameter("city");

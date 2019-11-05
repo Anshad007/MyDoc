@@ -13,13 +13,15 @@
 <body>
 		<form action="bookAppointment.jsp" >
 		<!--  <input  placeholder="Enter Doctor Name" name="doctor" >   <input type="submit" value="search" ><br>-->
-		Select City <select name="city">
+		Select City : <select name="city">
 			<option>mangalore</option>
-		</select><br>
-		Select Category<select name="category">
+			<option>kochi</option>
+		</select>
+		&nbsp &nbsp &nbsp Select Category : <select name="category">
 			<option>ed</option>
-		</select><br>
-		<input type="submit" >
+			<option>ew</option>
+		</select><br><br>
+		<input type="submit" value="search" >
 		</form>
 		<%!public ResultSet doctorsList; %>	
 		<%
@@ -36,6 +38,7 @@
 		}
 		while(doctorsList.next()){
 			%>
+			
 			<h2><%=doctorsList.getString("dname") %></h2>
 			<h4>payment fee : <%=doctorsList.getInt("payment") %></h4>
 			<h4>Timings : <%=doctorsList.getString("time") %></h4>

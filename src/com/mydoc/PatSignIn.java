@@ -1,6 +1,7 @@
 package com.mydoc;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,25 +21,27 @@ public class PatSignIn extends HttpServlet {
        
    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
 		String pname=request.getParameter("pname");
 		String pass=request.getParameter("pass");
+		boolean pExist=false;
 		try {
 		Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/MyDoc","testuser","testuser123");
-		Statement s=c.createStatement();
-		ResultSet rs=s.executeQuery("select pname,password from Patients");
+		PreparedStatement ps=c.prepareStatement("select password from Patients where pname=?");
+		ps.setString(1, pname);
+		ResultSet rs=ps.executeQuery();
 		while(rs.next()) {
-			if(rs.getString("pname").equals(pname)) {
-				if(rs.getString("password").equals(pass)) {
+			if(rs.getString("password").equals(pass)) {
+					pExist=true;
 					response.sendRedirect("bookAppointment.jsp");
-				}else {
-					response.getWriter().println("Invalid password");
 				}
-			}
-			
-			
+		}
+		if(pExist==false) {
+			out.println("Invalid Username or password");
 		}
 		}catch(Exception e) {
 			System.out.print(e);
+			//out.println("Invalid Username or password");
 
 		}
 	}
