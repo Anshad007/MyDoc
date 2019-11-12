@@ -11,15 +11,41 @@
 <title>Find a Doctor</title>
 </head>
 <body>
+<a href="PatLogout" ><button>Log Out</button></a>
+<%System.out.println("in bookAppointment.jsp"); %>
+	<%
+		if(session.getAttribute("pname")==null){
+			response.sendRedirect("index.jsp");
+		}
+	%>
+
 		<form action="bookAppointment.jsp" >
 		<!--  <input  placeholder="Enter Doctor Name" name="doctor" >   <input type="submit" value="search" ><br>-->
-		Select City : <select name="city">
-			<option>mangalore</option>
-			<option>kochi</option>
+		Select City : 
+		<select name="category">
+			<option>--Select--</option>
+			<option>Podiatrist</option>
+			<option>General Practitioner</option>
+			<option>Pediatrician</option>
+			<option>Endocrinologist</option>
+			<option>Neurologist</option>
+			<option>Rheumatologist</option>
+			<option>Allergist/Immunologist</option>
+			<option>Psychiatrist</option>
+			<option>Nephrologist</option>
+			<option>OB/GYN</option>
+			<option>Oncologist</option>
+			<option>Urologist</option>
+			<option>Cardiologist</option>
 		</select>
-		&nbsp &nbsp &nbsp Select Category : <select name="category">
-			<option>ed</option>
-			<option>ew</option>
+		&nbsp &nbsp &nbsp 
+		Select Category : 
+		<select name="city">
+			<option>--Select--</option>
+			<option>Mangalore</option>
+			<option>Kochi</option>
+			<option>Bangalore</option>
+			<option>Chennai</option>
 		</select><br><br>
 		<input type="submit" value="search" >
 		</form>
@@ -42,7 +68,7 @@
 			<h2><%=doctorsList.getString("dname") %></h2>
 			<h4>payment fee : <%=doctorsList.getInt("payment") %></h4>
 			<h4>Timings : <%=doctorsList.getString("time") %></h4>
-			<h4>Ph.no : <%=doctorsList.getInt("phone") %></h4>
+			<h4>Ph.no : <%=doctorsList.getString("phone") %></h4>
 			<a  href="bookAppointment?doctor=<%=doctorsList.getString("dname")%>"><button>click</button></a>
 			<hr>
 		<%}%>

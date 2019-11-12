@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class PatSignUp
@@ -22,35 +23,26 @@ public class PatSignUp extends HttpServlet {
        
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String uname=request.getParameter("uname");
+		String pname=request.getParameter("pname");
 		String email=request.getParameter("email");
 		String pass=request.getParameter("pass");
-		//String confPass=request.getParameter("confPass");
-		int phno=Integer.parseInt(request.getParameter("phno"));
+		String phno=request.getParameter("phno");
 		
 		boolean exist=false;
 		
 		try {
 		Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/MyDoc","testuser","testuser123");
-//		Statement s=c.createStatement();
-//		ResultSet unames=s.executeQuery("select pname from Patients");
-//		while(unames.next()) {
-//			if(unames.getString(1).equals(uname)) {
-//				response.sendRedirect("DoctorSignUp.jsp");
-//				exist=true;
-//				break;
-//			}
-//			unames.next();
-//		}
 		if(!exist) {
 		PreparedStatement ps=c.prepareStatement("insert into Patients(pname,email,phone,password) values(?,?,?,?)");
-		ps.setString(1,uname);
+		ps.setString(1,pname);
 		ps.setString(2,email);
-		ps.setInt(3,phno);
+		ps.setString(3,phno);
 		ps.setString(4, pass);
 		ps.executeUpdate();
 		}
 		c.close();
+		HttpSession session=request.getSession();
+		session.setAttribute("pname", pname);
 		response.sendRedirect("bookAppointment.jsp");
 		}catch(Exception e) {
 			System.out.print(e);

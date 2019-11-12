@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/DocSignUp")
@@ -23,7 +24,7 @@ public class DocSignUp extends HttpServlet {
 		String category=request.getParameter("category");
 		String city=request.getParameter("city");
 		String email = request.getParameter("email");
-		int phone= Integer.parseInt(request.getParameter("phno"));
+		String phone= request.getParameter("phno");
 		String pass = request.getParameter("pass");
 		int payment = Integer.parseInt(request.getParameter("payment"));
 		String time = request.getParameter("time");
@@ -32,13 +33,15 @@ public class DocSignUp extends HttpServlet {
 			PreparedStatement ps=c.prepareStatement("insert into Doctors(dname,email,phone,password,city,category,payment,time) values(?,?,?,?,?,?,?,?)");
 			ps.setString(1,dname);
 			ps.setString(2,email);
-			ps.setInt(3,phone);
+			ps.setString(3,phone);
 			ps.setString(4, pass);
 			ps.setString(5, city);
 			ps.setString(6, category);
 			ps.setInt(7, payment);
 			ps.setString(8, time);
 			ps.executeUpdate();
+			HttpSession session=request.getSession();
+			session.setAttribute("dname", dname);
 			response.sendRedirect("AppointedList.jsp");
 		}catch(Exception e) {
 			System.out.println(e);

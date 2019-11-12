@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/DocSignIn")
@@ -25,17 +26,19 @@ public class DocSignIn extends HttpServlet {
 		String pass=request.getParameter("pass");
 		boolean pExist=false;
 		try{
-		
+		if( !(dname.equals("")&&dname==null) ) {
 		Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/MyDoc","testuser","testuser123");
 		PreparedStatement ps=c.prepareStatement("select password from Doctors where dname=?");
 		ps.setString(1, dname);
 		ResultSet rs=ps.executeQuery();
-		rs.next();
 		while(rs.next()) {
-			if(/*rs.getString("dname").equals(dname) &&*/ rs.getString("password").equals(pass)) {
+			if( rs.getString("password").equals(pass)) {
 					pExist=true;
-					response.sendRedirect("bookAppointment.jsp");
+					HttpSession session=request.getSession();
+					session.setAttribute("dname", dname);
+					response.sendRedirect("DoctorHome.jsp");
 				}
+		}
 		}
 		if(pExist==false) {
 			out.println("Invalid Username or password");

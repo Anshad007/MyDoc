@@ -16,7 +16,7 @@
     <form class="userreg" action="PatSignUp" method="post">
         <h1>MyDoc</h1>
         <h2>Register Here</h2>
-            <input type="text" name="uname" placeholder="Full Name">
+            <input type="text" name="pname" placeholder="Full Name">
             <input type="email" name="email" placeholder="Email">
             <input type="tel" name="phno" placeholder="Phone Number">
             <input type="password" name="pass" placeholder="Password">
