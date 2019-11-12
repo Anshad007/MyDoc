@@ -1,0 +1,136 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.m{
+    margin: 0;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    border-bottom: 1px solid black;
+    box-shadow: 1px 1px 1px blue;
+}
+.navbar a{
+    text-decoration: none;
+    display: block;
+    color: blue;
+    border: 2px solid #26D07C;
+    transform: 0.2s;
+    border-radius: 200px;
+    padding: 7px;
+    outline: none;
+}
+.navbar ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.navbar ul li{
+	
+    float: left;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 38px;
+    align-content: center;
+    align-items: center;
+}
+.navbar a:hover{
+    background-color: #ddd;
+    color: blue;
+    background-color:yellow;
+}
+.heading{
+    text-align: center;
+}
+h1{
+    padding: 5vh 0 0 0;
+}
+.heading .medi{
+    color: blue;
+}
+.navbar .nav2{
+    text-decoration: none;
+    top:0;
+    left:0;
+    color: blue;
+    font-size: 30px;
+}
+.navbar .nav1{
+float:right;
+}
+.user{
+    
+    width: 6ss00px;
+    position: absolute;
+    opacity: 0.8;
+    padding: 40px;
+    top: 20%;
+    left: 5%;
+    transform: translate(-5% -50%); 
+
+}
+
+.user input[type="submit"]{
+background-color: #ff1493;
+border: 0px solid ;
+display: block;
+outline: none;
+text-align: center;
+margin: 20px auto;
+transform: 0.2s;
+border-radius: 200px;
+padding: 5px 15px 5px 15px;
+color: #fff;
+font-weight: 700px;
+}
+h2 {
+	color: #F1485B;
+}
+.sec{
+    text-align: center;
+    width: 300px;
+    position: absolute;
+    top: 27%;
+    left: 61%;
+    transform: translate(-50% -50%);
+	isolation:isolate;
+}
+.sec img{
+	width:590px;
+	mix-blend-mode: overlay;
+}
+.slct{
+    background-color: #0dff15;
+    min-width: 250px;
+    min-height: 30px;
+}
+h4{
+    color: red;
+}
+.list{
+    margin-top: 20rem;
+    text-align: center;
+    width: 300px;
+    position: absolute;
+    
+    padding: 40px;
+}
+.btn{
+    text-decoration-style: double;
+    width: 100px;
+    text-decoration: none;
+    display: block;
+    color: blue;
+    border: 2px solid #26D07C;
+    transform: 0.2s;
+    border-radius: 200px;
+    padding: 7px;
+    outline: none;
+    background-color: #0dff15;
+}
