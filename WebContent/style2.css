@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: url('2.jpg') no-repeat;
+    background: url('dr2.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -10,7 +10,7 @@ body{
     margin: 0;
     width: 100%;
     height: 90px;
-    background-color: #fff;
+    background-color: white;
     border-bottom: 1px solid black;
     box-shadow: 1px 1px 1px blue;
 }
@@ -18,7 +18,7 @@ body{
     text-decoration: none;
     display: block;
     color: blue;
-    border: 2px solid rgb(54, 226, 54) ;
+    border: 2px solid #26D07C;
     transform: 0.2s;
     border-radius: 200px;
     padding: 7px;
@@ -30,6 +30,7 @@ body{
     list-style: none;
 }
 .navbar ul li{
+	
     float: left;
     display: inline-block;
     width: 100px;
@@ -41,9 +42,10 @@ body{
     align-content: center;
     align-items: center;
 }
-.navbar a :hover{
+.navbar a:hover{
     background-color: #ddd;
-    color: #000;
+    color: blue;
+    background-color:yellow;
 }
 .heading{
     text-align: center;
@@ -68,7 +70,7 @@ float:right;
     text-align: center;
     width: 300px;
     position: absolute;
-    background: gray;
+    background: url('log.jpg');
     opacity: 0.8;
     padding: 40px;
     top: 37%;
@@ -78,10 +80,11 @@ float:right;
 }
 .user input[type="text"]{
     display: block;
+    background-color:white;
     outline: none;
     margin: 20px auto;
     text-align: center;
-    border-bottom: 1px solid black;
+    border: 2px solid green;
     transform: 0.2s;
     padding: 6px;
 }
@@ -90,7 +93,7 @@ float:right;
     outline: none;
     margin: 20px auto;
     text-align: center;
-    border-bottom: 1px solid black;
+    border: 2px solid green;
     transform: 0.2s;
     padding: 6px;
 }
@@ -106,4 +109,21 @@ border-radius: 200px;
 padding: 5px 15px 5px 15px;
 color: #fff;
 font-weight: 700px;
+}
+h2 {
+	color: #F1485B;
+}
+.sec{
+    text-align: center;
+    width: 300px;
+    position: absolute;
+    top: 27%;
+    left: 61%;
+    transform: translate(-50% -50%);
+	isolation:isolate;
+}
+.sec img{
+	width:590px;
+	mix-blend-mode: overlay;
+}
 }
