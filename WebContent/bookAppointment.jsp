@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Find a Doctor</title>
+	<link rel="stylesheet" href="style7.css">
 </head>
 <body>
 	<div class="m">
