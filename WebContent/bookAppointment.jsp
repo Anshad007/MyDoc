@@ -81,7 +81,7 @@
 			<h4>payment fee : <%=doctorsList.getInt("payment") %></h4>
 			<h4>Timings : <%=doctorsList.getString("time") %></h4>
 			<h4>Ph.no : <%=doctorsList.getString("phone") %></h4>
-			<a  href="bookAppointment?doctor=<%=doctorsList.getString("dname")%>"><button>click</button></a>
+			<a  href="bookAppointment?doctor=<%=doctorsList.getString("dname")%>">click</a>
 			<hr>
 		<%}%>
 		</div>
