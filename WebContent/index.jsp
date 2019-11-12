@@ -31,5 +31,8 @@
     <h5>New User?</h5>
     <a href="userregister.jsp">Register Here</a>
 </form>
+    <div class="sec">
+<img src="fr.png" alt="svg">
+</div>
 </body>
 </html>
