@@ -2,8 +2,6 @@ body{
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: url('dr2.jpg') no-repeat;
-    background-size: cover;
 }
 
 .m{
@@ -67,36 +65,17 @@ h1{
 float:right;
 }
 .user{
-    text-align: center;
-    width: 300px;
+    
+    width: 6ss00px;
     position: absolute;
-    background: url('log.jpg');
     opacity: 0.8;
     padding: 40px;
-    top: 37%;
-    left: 36%;
-    transform: translate(-50% -50%);
+    top: 20%;
+    left: 5%;
+    transform: translate(-5% -50%); 
 
 }
-.user input[type="text"]{
-    display: block;
-    background-color:white;
-    outline: none;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid green;
-    transform: 0.2s;
-    padding: 6px;
-}
-.user input[type="password"]{
-    display: block;
-    outline: none;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid green;
-    transform: 0.2s;
-    padding: 6px;
-}
+
 .user input[type="submit"]{
 background-color: #ff1493;
 border: 0px solid ;
@@ -126,4 +105,32 @@ h2 {
 	width:590px;
 	mix-blend-mode: overlay;
 }
+.slct{
+    background-color: #0dff15;
+    min-width: 250px;
+    min-height: 30px;
+}
+h4{
+    color: red;
+}
+.list{
+    margin-top: 20rem;
+    text-align: center;
+    width: 300px;
+    position: absolute;
+    
+    padding: 40px;
+}
+.btn{
+    text-decoration-style: double;
+    width: 100px;
+    text-decoration: none;
+    display: block;
+    color: blue;
+    border: 2px solid #26D07C;
+    transform: 0.2s;
+    border-radius: 200px;
+    padding: 7px;
+    outline: none;
+    background-color: #0dff15;
 }

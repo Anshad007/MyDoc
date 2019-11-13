@@ -9,9 +9,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Find a Doctor</title>
+	<link rel="stylesheet" href="style7.css">
 </head>
 <body>
-<a href="PatLogout" ><button>Log Out</button></a>
+	<div class="m">
+	   <nav class="navbar">
+			<ul><li class="nav2">MyDoc</li></ul>
+		   <ul class="nav1">
+				<li ><a  href="index.jsp">Home</a></li>
+			   <li ><a  href="admlogin.jsp">Admin</a></li>
+			   <li><a  href="doclogin.jsp">Doctor</a></li>
+			   <li ><a  href="about.jsp">About_us</a></li>
+			   <li><a href="PatLogout" >Log Out</a></li>
+			 </ul>
+	   </nav>
+	</div>   
 <%System.out.println("in bookAppointment.jsp"); %>
 	<%
 		if(session.getAttribute("pname")==null){
@@ -19,10 +31,10 @@
 		}
 	%>
 
-		<form action="bookAppointment.jsp" >
+		<form class="user" action="bookAppointment.jsp" >
 		<!--  <input  placeholder="Enter Doctor Name" name="doctor" >   <input type="submit" value="search" ><br>-->
-		Select City : 
-		<select name="category">
+		<h4>Select City :</h4> 
+		<select class="slct" name="category">
 			<option>--Select--</option>
 			<option>Podiatrist</option>
 			<option>General Practitioner</option>
@@ -39,8 +51,8 @@
 			<option>Cardiologist</option>
 		</select>
 		&nbsp &nbsp &nbsp 
-		Select Category : 
-		<select name="city">
+		<h4>Select Category : </h4>
+		<select class="slct" name="city">
 			<option>--Select--</option>
 			<option>Mangalore</option>
 			<option>Kochi</option>
@@ -64,15 +76,19 @@
 		}
 		while(doctorsList.next()){
 			%>
-			
+			<div class="list">
 			<h2><%=doctorsList.getString("dname") %></h2>
 			<h4>payment fee : <%=doctorsList.getInt("payment") %></h4>
 			<h4>Timings : <%=doctorsList.getString("time") %></h4>
 			<h4>Ph.no : <%=doctorsList.getString("phone") %></h4>
-			<a  href="bookAppointment?doctor=<%=doctorsList.getString("dname")%>"><button>click</button></a>
+			<a  href="bookAppointment?doctor=<%=doctorsList.getString("dname")%>">click</a>
 			<hr>
 		<%}%>
-		
+		</div>
+	<div class="sec">
+			<img src="dcrsl.png" alt="svg">
+			</div>
+
 	
 </body>
 </html>
