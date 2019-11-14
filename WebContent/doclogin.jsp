@@ -12,7 +12,10 @@
    <nav class="navbar">
         <ul><li class="nav2">MyDoc</li></ul>
        <ul class="nav1">
-           <li ><a  href="index.jsp">Home</a></li>
+            <li ><a  href="index.jsp">Home</a></li>
+           <li ><a  href="admlogin.jsp">Admin</a></li>
+           <li><a  href="doclogin.jsp">Doctor</a></li>
+           <li ><a  href="about.jsp">About_us</a></li>
        </ul>
    </nav>
 </div>
