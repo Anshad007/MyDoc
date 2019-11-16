@@ -9,10 +9,16 @@
 </head>
 <body>
 <div class="m">
-                <nav class="navbar">
-                     <ul><li class="nav2">MyDoc</li></ul>
-                </nav>
-             </div>
+   <nav class="navbar">
+        <ul><li class="nav2">MyDoc</li></ul>
+       <ul class="nav1">
+            <li ><a  href="index.jsp">Home</a></li>
+           <li ><a  href="admlogin.jsp">Admin</a></li>
+           <li><a  href="doclogin.jsp">Doctor</a></li>
+           <li ><a  href="about.jsp">About_us</a></li>
+       </ul>
+   </nav>
+</div>
     <form class="userreg" action="DocSignUp" method="post">
         <h1>MyDoc</h1>
         <h2>Register Here</h2>
