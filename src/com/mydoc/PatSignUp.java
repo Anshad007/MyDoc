@@ -43,7 +43,7 @@ public class PatSignUp extends HttpServlet {
 		c.close();
 		HttpSession session=request.getSession();
 		session.setAttribute("pname", pname);
-		response.sendRedirect("bookAppointment.jsp");
+		response.sendRedirect("index.jsp");
 		}catch(Exception e) {
 			System.out.print(e);
 		}

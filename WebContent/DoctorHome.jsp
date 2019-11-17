@@ -14,6 +14,8 @@
 <a href="DocLogout" ><button>Log Out</button></a>
 <%
 
+response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); 
+
 if(session.getAttribute("dname")==null){
 	response.sendRedirect("doclogin.jsp");
 }

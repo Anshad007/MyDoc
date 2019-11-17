@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="style5.css">
 </head>
 <body>
+<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");%>
 <div class="m">
    <nav class="navbar">
         <ul><li class="nav2">MyDoc</li></ul>

@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="style7.css">
 </head>
 <body>
+<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); 
+%>
 	<div class="m">
 	   <nav class="navbar">
 			<ul><li class="nav2">MyDoc</li></ul>
@@ -24,7 +26,6 @@
 			 </ul>
 	   </nav>
 	</div>   
-<%System.out.println("in bookAppointment.jsp"); %>
 	<%
 		if(session.getAttribute("pname")==null){
 			response.sendRedirect("index.jsp");
@@ -33,7 +34,7 @@
 
 		<form class="user" action="bookAppointment.jsp" >
 		<!--  <input  placeholder="Enter Doctor Name" name="doctor" >   <input type="submit" value="search" ><br>-->
-		<h4>Select City :</h4> 
+		<h4>Select Category :</h4> 
 		<select class="slct" name="category">
 			<option>--Select--</option>
 			<option>Podiatrist</option>
@@ -51,7 +52,7 @@
 			<option>Cardiologist</option>
 		</select>
 		&nbsp &nbsp &nbsp 
-		<h4>Select Category : </h4>
+		<h4>Select City : </h4>
 		<select class="slct" name="city">
 			<option>--Select--</option>
 			<option>Mangalore</option>

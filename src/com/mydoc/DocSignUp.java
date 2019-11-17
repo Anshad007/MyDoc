@@ -19,7 +19,6 @@ public class DocSignUp extends HttpServlet {
        
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.print("sdfs");
 		String dname=request.getParameter("dname");
 		String category=request.getParameter("category");
 		String city=request.getParameter("city");
@@ -42,7 +41,7 @@ public class DocSignUp extends HttpServlet {
 			ps.executeUpdate();
 			HttpSession session=request.getSession();
 			session.setAttribute("dname", dname);
-			response.sendRedirect("AppointedList.jsp");
+			response.sendRedirect("doclogin.jsp");
 		}catch(Exception e) {
 			System.out.println(e);
 		}
